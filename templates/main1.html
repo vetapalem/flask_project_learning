@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='key_content.css')}}">
+    <title>{{title}}</title>
+    <style>
+        .logo{
+            height: 50px;
+            background-color: brown;
+            margin:-5px;
+        }
+        button{
+
+            margin: 10px;
+            background-color: blue;
+            width: 150px;
+            height: 30px;
+            color: aquamarine;
+            font-size: 20px;
+            text-transform: capitalize;
+            border-radius: 12px;
+            box-shadow: 25px yellow;
+            position: fixed;
+            
+        }
+    </style>
+
+</head>
+<body>
+    <div class="logo">
+        <div class="home">
+            <a href="{{url_for('login')}}"><button  value="">home</button></a>
+        </div>
+
+
+    </div>
+    <br>
+    
+    {%for a in code['articles'][:] %}
+    
+        {% if a["author"] != None %}
+            <div class="new-obj">
+            
+                <p class="tite"><b>{{a["author"] | safe}}</b>{{a["title"] | safe}}</p>
+                <img src="{{a['urlToImage']}}" alt="server down">
+            
+            </div>
+            <br>
+        {%elif a["author"] == None %}
+            <div class="new-obj">
+                <p class="tite">{{'{}\n{}'.format("....",a["title"] | safe)}}</p>
+                <img src="{{a['urlToImage']}}" alt="server down">
+            </div>
+            <br>
+
+        {%endif%}
+
+
+    {%endfor%}
+</body>
+</html>

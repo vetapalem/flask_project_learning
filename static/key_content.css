@@ -1,0 +1,43 @@
+
+.main{
+    margin: -20px;
+    height: 250px;
+    border: 2px solid yellow;
+    background-color: black;
+
+}
+input{
+    height: 35px;
+    width: 85%;
+    font-size: 20px;
+    border-radius: 25px ;
+    position: relative;
+    top:60px;
+    left: 5%;
+}
+input[type='button']{
+    width: 250px;
+    position: relative;
+    left: 35%;
+}
+.new-obj{
+    position: relative;
+    left: 200px;
+    width: 550px;
+
+    border:2px solid red;
+        
+    
+}
+.tite{
+
+        
+        
+    position: relative;
+    left: 25px;
+    /* overflow: ; */
+}
+
+img{
+    width: 550px;
+}
